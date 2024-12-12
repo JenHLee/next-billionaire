@@ -18,7 +18,6 @@ export default function BillionaireCard({
 }: BillionaireProps) {
   return (
     <div className="flex flex-col transition hover:scale-110 mb-10 cursor-pointer">
-      {id === "elon-musk" ? (
         <Link href={`/person/${id}`}>
           <img src={squareImage} alt={name} width={200} />
           <span className="text-base font-bold">{name}</span>
@@ -27,15 +26,6 @@ export default function BillionaireCard({
             {formatNetWorth(netWorth)} / {industries.join(", ")}
           </span>
         </Link>
-      ) : (
-        <>
-          <img src={squareImage} alt={name} width={200} />
-          <span className="text-base font-bold">{name}</span>
-          <span className="text-sm">
-            {formatNetWorth(netWorth)} / {industries.join(", ")}
-          </span>
-        </>
-      )}
     </div>
   );
 }
